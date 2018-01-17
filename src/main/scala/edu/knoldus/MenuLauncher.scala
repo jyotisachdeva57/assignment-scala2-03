@@ -7,32 +7,16 @@ object MenuLauncher {
   def main(args: Array[String]): Unit = {
     val log = Logger.getLogger(this.getClass) //in code
     val obj = new Operations
-    val first = 1
-    val second = 1
-    val third = 2
-    val fourth = 3
-    val rotate = 2
-    val firstchar = 'a'
-    val secondchar = 'b'
-    val thirdchar = 'c'
-    val charlist = List(firstchar, secondchar, thirdchar)
-    val list = List(first, second, third, fourth)
-    val resultlist = obj.rotate(rotate, charlist)
-    log.info(resultlist)
-    val resdel = obj.deleteConsecutive(list)
-    log.info(resdel)
-    val magicno1 = 19
-    val magicno2 = 20
-    val happylist = List(magicno1, magicno2)
-    for (happy <- happylist) {
-      val bool = obj.happyNumber(happy)
-      if (bool) {
-        log.info(happy + "is a happy number")
-      }
-      else {
-        log.info(happy + "is not a happy number")
-      }
-    }
+    val firstList = List(1, 2, 3, 4, 5)
+    val secondList = List(6, 7)
+    val subList = List(2, 3)
+    val subList1 = List(1, 3)
+    log.info(obj.mergeList(firstList, secondList))
+    log.info(obj.length(firstList))
+    log.info(obj.hasSubSequence(firstList, subList))
+    log.info(obj.hasSubSequence(firstList, secondList))
+    log.info(obj.hasSubSequence(firstList, subList1))
+    log.info(obj.splitList[Int](firstList, x => x % 2 == 0))
   }
 
 }
